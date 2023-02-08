@@ -1,9 +1,17 @@
 import "./App.css";
+import FetchData from "./components/FetchData";
 
 function App() {
   return (
     <div className="App">
-      <h1>Promohub</h1>
+      {/* Logo */}
+      <img
+        className="logo"
+        src="https://promohub.com.br/_nuxt/logo.f8018e58.png"
+        alt="Promohub"
+      />
+      {/* Componentes */}
+      <FetchData />
     </div>
   );
 }
