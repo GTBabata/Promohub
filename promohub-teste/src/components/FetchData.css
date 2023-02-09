@@ -1,0 +1,105 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2.5rem;
+  gap: 1.25rem;
+}
+
+#card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  row-gap: 0.5rem;
+  border-radius: 1.5rem;
+  width: 320px;
+}
+
+@media (max-width: 640px) {
+  #card {
+    width: 100%;
+  }
+}
+
+#card-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 288px;
+}
+
+#card-img {
+  display: block;
+  max-height: 288px;
+  height: auto;
+  max-width: 100%;
+  width: auto;
+}
+
+.card-header {
+  background-color: #fff;
+  padding: 0;
+  border: 0px;
+  font-weight: 300;
+  font-size: 1.125rem;
+  text-align: center;
+  line-height: 1.75rem;
+}
+
+.card-body {
+  flex: 0;
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  text-align: center;
+  padding: 1.25rem 1.25rem 0 1.25rem;
+}
+
+#dcp-1 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+#dcp-2 {
+  font-weight: 700;
+  color: #003b7b;
+}
+
+#button {
+  margin-top: 1.25rem;
+  width: 100%;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #24b45d;
+  border: none;
+  cursor: pointer;
+}
+
+#button:hover {
+  background-color: #1b8746;
+}
+
+#button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.bi-box-arrow-up-right {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 0.75rem;
+}
+
+#created-at {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  column-gap: 0.5rem;
+}

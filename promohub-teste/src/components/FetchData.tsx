@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./FetchData.css";
 
 const FetchData = () => {
   const baseUrl = "https://promohub.com.br";
@@ -23,37 +24,43 @@ const FetchData = () => {
 
   return (
     <div>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           {/* Renderizando componente */}
           {products.map((item) => (
-            <div key={item.id} className="col-lg-4">
-              {/* Card */}
-              <div className="card mb-4 p-4">
-                {/* Imagem do card */}
+            /* Card */
+            <div id="card" className="card">
+              {/* Imagem */}
+              <div id="card-img-container">
+                <img
+                  id="card-img"
+                  className="card-img-top"
+                  src={baseUrl + item.image}
+                  alt={item.title}
+                />
+              </div>
+              {/* Título */}
+              <div className="card-header">{item.title}</div>
+              {/* Descrição */}
+              <div className="card-body">
+                <div id="dcp-1">A partir de:</div>
                 <div>
-                  <img
-                    className="card-img-top"
-                    src={baseUrl + item.image}
-                    alt={item.title}
-                  />
+                  <div id="dcp-2">R$ {item.price}</div>
+                  {item.parcels ? (
+                    <div id="dcp-1">Em até {item.parcels}x</div>
+                  ) : (
+                    <div id="dcp-1">À vista</div>
+                  )}
                 </div>
-                {/* Corpo do card */}
-                <div className="card-body">
-                  <h5 className="card-title text-center">{item.title}</h5>
-                  <p className="text-center">
-                    A partir de: <span>R${item.price}</span> à vista
-                  </p>
-                  {/* Botao */}
-                  <button className="btn btn-success">
-                    <a href={item.url}>Pegar promoção!</a>
-                    <i className="bi bi-box-arrow-up-right"></i>
-                  </button>
-                  {/* Data de criação */}
-                  <span>
-                    <i className="bi bi-clock"></i>
-                    {item.fromNow}
-                  </span>
+                {/* Botão */}
+                <button id="button" className="btn btn-success">
+                  <a href={item.url}>Pegar Promoção</a>
+                  <i className="bi bi-box-arrow-up-right"></i>
+                </button>
+                {/* Data de Criação */}
+                <div id="created-at">
+                  <i className="bi bi-clock"></i>
+                  {item.fromNow}
                 </div>
               </div>
             </div>
