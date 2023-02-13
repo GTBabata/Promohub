@@ -2,25 +2,36 @@ import { useEffect, useState } from "react";
 import "./FetchData.css";
 
 const FetchData = () => {
-  const baseUrl = "https://promohub.com.br";
-
-  const jsonUrl =
-    "https://promohub.com.br/api/offers?page=1&perPage=20&sortBy=createdAt&filter=status::ne::false";
-
+  /* States */
+  const [page, setPage] = useState<number>(1);
   const [products, setProducts] = useState<any[]>([]);
+  const [maxPage, setMaxPage] = useState<number>(0);
+
+  /* Links */
+  const baseUrl = "https://promohub.com.br";
+  const jsonUrl = `https://promohub.com.br/api/offers?page=${page}&perPage=20&sortBy=createdAt&filter=status::ne::false`;
 
   /* Consumindo API */
   useEffect(() => {
     fetch(jsonUrl)
       .then((res) => res.json())
       .then((data) => {
-        const products = data.offers;
-        setProducts(products);
+        setProducts([...products, ...data.offers]);
+        setPage(parseInt(data.pagination.currentPage));
+        setMaxPage(data.pagination.totalPages);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [page]);
 
-  console.log(products);
+  /* Carregando mais componentes */
+  window.onscroll = () => {
+    if (
+      window.innerHeight + window.scrollY >= document.body.offsetHeight &&
+      !(page + 1 > maxPage)
+    ) {
+      setPage(page + 1);
+    }
+  };
 
   return (
     <div>
@@ -29,7 +40,7 @@ const FetchData = () => {
           {/* Renderizando componente */}
           {products.map((item) => (
             /* Card */
-            <div id="card" className="card">
+            <div key={item.id} id="card" className="card">
               {/* Imagem */}
               <div id="card-img-container">
                 <img
@@ -40,7 +51,11 @@ const FetchData = () => {
                 />
               </div>
               {/* Título */}
-              <div className="card-header">{item.title}</div>
+              <div className="card-header">
+                {item.title.length > 100
+                  ? `${item.title.slice(0, 100)}...`
+                  : item.title}
+              </div>
               {/* Descrição */}
               <div className="card-body">
                 <div id="dcp-1">A partir de:</div>
@@ -54,7 +69,7 @@ const FetchData = () => {
                 </div>
                 {/* Botão */}
                 <button id="button" className="btn btn-success">
-                  <a href={item.url}>Pegar Promoção</a>
+                  <a href={item.url}>Pegar promoção</a>
                   <i className="bi bi-box-arrow-up-right"></i>
                 </button>
                 {/* Data de Criação */}

@@ -25,4 +25,5 @@ body {
   width: 8rem;
   height: auto;
   max-width: 100%;
+  cursor: pointer;
 }
