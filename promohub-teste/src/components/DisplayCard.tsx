@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import "./FetchData.css";
+import "./DisplayCard.css";
 
-const FetchData = () => {
+const DisplayCard = () => {
   /* States */
   const [page, setPage] = useState<number>(1);
   const [products, setProducts] = useState<any[]>([]);
@@ -86,4 +86,4 @@ const FetchData = () => {
   );
 };
 
-export default FetchData;
+export default DisplayCard;

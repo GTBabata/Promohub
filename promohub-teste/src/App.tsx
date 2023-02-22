@@ -1,5 +1,5 @@
 import "./App.css";
-import FetchData from "./components/FetchData";
+import DisplayCard from "./components/DisplayCard";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         alt="Promohub"
       />
       {/* Componentes */}
-      <FetchData />
+      <DisplayCard />
     </div>
   );
 }
