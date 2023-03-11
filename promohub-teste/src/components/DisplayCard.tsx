@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import "./DisplayCard.css";
-<<<<<<< HEAD
-=======
 import { Link } from "react-router-dom";
->>>>>>> e7c582d (criada pagina e css para cada card)
 
 const DisplayCard = () => {
   /* States */
