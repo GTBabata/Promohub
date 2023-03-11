@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import "./DisplayCard.css";
+<<<<<<< HEAD
+=======
+import { Link } from "react-router-dom";
+>>>>>>> e7c582d (criada pagina e css para cada card)
 
 const DisplayCard = () => {
   /* States */
@@ -19,6 +23,7 @@ const DisplayCard = () => {
         setProducts([...products, ...data.offers]);
         setPage(parseInt(data.pagination.currentPage));
         setMaxPage(data.pagination.totalPages);
+        console.log(data.offers);
       })
       .catch((err) => console.log(err));
   }, [page]);
@@ -41,22 +46,28 @@ const DisplayCard = () => {
           {products.map((item) => (
             /* Card */
             <div key={item.id} id="card" className="card">
-              {/* Imagem */}
-              <div id="card-img-container">
-                <img
-                  id="card-img"
-                  className="card-img-top"
-                  src={baseUrl + item.image}
-                  alt={item.title}
-                />
-              </div>
-              {/* Título */}
-              <div className="card-header">
-                {item.title.length > 100
-                  ? `${item.title.slice(0, 100)}...`
-                  : item.title}
-              </div>
-              {/* Descrição */}
+              <Link
+                className="reactLink stretched-link"
+                to={`/ofertas/${item.id}`}
+              >
+                {/* Imagem */}
+                <div className="card-img-container" id="card-img-container">
+                  <img
+                    id="card-img"
+                    className="card-img-top"
+                    src={baseUrl + item.image}
+                    alt={item.title}
+                  />
+                </div>
+                {/* Título */}
+                <div className="card-header">
+                  {item.title.length > 100
+                    ? `${item.title.slice(0, 100)}...`
+                    : item.title}
+                </div>
+                {/* Descrição */}
+              </Link>
+
               <div className="card-body">
                 <div id="dcp-1">A partir de:</div>
                 <div>

@@ -1,30 +1,15 @@
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 2.5rem;
-  gap: 1.25rem;
-}
-
-#card {
+#single-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
   row-gap: 0.5rem;
   border-radius: 1.5rem;
-  width: 320px;
-  transition: 0.15s;
-  cursor: pointer;
+  width: 350px;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: black;
-}
-
-#card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
 }
 
 .reactLink {
@@ -33,14 +18,14 @@
   z-index: 1;
 }
 
-#card-img-container {
+#single-card-img-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 288px;
 }
 
-#card-img {
+#single-card-img {
   display: block;
   max-height: 288px;
   height: auto;
@@ -70,18 +55,18 @@
   padding: 1.25rem 1.25rem 0 1.25rem;
 }
 
-#dcp-1 {
+#single-dcp-1 {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-#dcp-2 {
+#single-dcp-2 {
   font-weight: 700;
   color: #003b7b;
   font-size: 1.25rem;
 }
 
-#button {
+#single-button {
   margin-top: 1.25rem;
   width: 100%;
   font-weight: 500;
@@ -96,11 +81,11 @@
   position: relative;
 }
 
-#button:hover {
+#single-button:hover {
   background-color: #1b8746;
 }
 
-#button a {
+#single-button a {
   text-decoration: none;
   color: #fff;
   z-index: 1;
@@ -112,7 +97,7 @@
   margin-left: 0.75rem;
 }
 
-#created-at {
+#single-created-at {
   font-weight: 300;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -123,15 +108,19 @@
   column-gap: 0.5rem;
 }
 
+.final-obs {
+  color: rgb(156, 163, 175);
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 12px;
+  text-align: center;
+}
+
 /* Media querys */
 
-@media (max-width: 640px) {
-  #card {
+@media (max-width: 605px) {
+  #single-card {
     width: 100%;
-  }
-
-  .row {
-    padding: 0.5rem;
-    gap: 1.75rem;
+    max-width: 565px;
   }
 }
