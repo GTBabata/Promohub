@@ -20,7 +20,6 @@ const DisplayCard = () => {
         setProducts([...products, ...data.offers]);
         setPage(parseInt(data.pagination.currentPage));
         setMaxPage(data.pagination.totalPages);
-        console.log(data.offers);
       })
       .catch((err) => console.log(err));
   }, [page]);
@@ -35,6 +34,8 @@ const DisplayCard = () => {
     }
   };
 
+  console.log(products);
+
   return (
     <div>
       <div className="container-fluid">
@@ -46,6 +47,7 @@ const DisplayCard = () => {
               <Link
                 className="reactLink stretched-link"
                 to={`/ofertas/${item.id}`}
+                state={{ products: products, baseUrl: baseUrl }}
               >
                 {/* Imagem */}
                 <div className="card-img-container" id="card-img-container">
