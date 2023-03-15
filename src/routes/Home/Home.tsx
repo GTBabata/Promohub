@@ -1,10 +1,12 @@
 import "./Home.css";
 import DisplayCard from "../../components/DisplayCard";
+import Carousel from "../../components/Carousel";
 
 const Home = () => {
   return (
     <div className="Home">
-      {/* Componentes */}
+      {/* Components */}
+      <Carousel />
       <DisplayCard />
     </div>
   );

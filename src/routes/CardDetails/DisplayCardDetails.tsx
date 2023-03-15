@@ -29,7 +29,7 @@ const DisplayCardDetails = () => {
     <div>
       {productDetails && (
         <div key={productDetails.id} id="single-card" className="card">
-          {/* Imagem */}
+          {/* Image */}
           <div id="single-card-img-container" className="card-img-container">
             <img
               id="single-card-img"
@@ -38,13 +38,13 @@ const DisplayCardDetails = () => {
               alt={`Produto :${productDetails.id}`}
             />
           </div>
-          {/* Título */}
+          {/* Title */}
           <div className="card-header">
             {productDetails.title && productDetails.title.length > 100
               ? `${productDetails.title.slice(0, 100)}...`
               : productDetails.title}
           </div>
-          {/* Descrição */}
+          {/* Description */}
           <div className="card-body">
             <div id="single-dcp-1">A partir de:</div>
             <div>
@@ -55,12 +55,12 @@ const DisplayCardDetails = () => {
                 <div id="single-dcp-1">À vista</div>
               )}
             </div>
-            {/* Botão */}
+            {/* Button */}
             <button id="single-button" className="btn btn-success">
               <a href={`${productDetails.url}`}>Pegar promoção</a>
               <i className="bi bi-box-arrow-up-right"></i>
             </button>
-            {/* Data de Criação */}
+            {/* Creation date */}
             <div>
               <div id="single-created-at">
                 <i className="bi bi-clock"></i>

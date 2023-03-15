@@ -1,0 +1,37 @@
+.carouselComponent {
+  display: block;
+  margin: 1rem;
+  max-width: 1680px;
+}
+
+.carouselComponent button {
+  width: 8rem;
+}
+
+.carousel-indicators .active {
+  background-color: rgb(70, 88, 157);
+}
+
+.carousel-inner {
+  border-radius: 1.5rem;
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+}
+
+/* Media querys */
+
+@media (max-width: 640px) {
+  .carousel-inner {
+    border-radius: 0px;
+  }
+  .carouselComponent button {
+    width: 2rem;
+  }
+
+  .carousel-indicators {
+    visibility: hidden;
+  }
+}

@@ -1,5 +1,4 @@
 import "./App.css";
-import DisplayCard from "./components/DisplayCard";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
         src="https://promohub.com.br/_nuxt/logo.f8018e58.png"
         alt="Promohub"
       />
-      {/* Componentes */}
+      {/* Components */}
       <Outlet />
     </div>
   );
